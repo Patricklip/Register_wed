@@ -7,12 +7,23 @@
 //console.log(typeof(name))
 
 let txtUsername = document.querySelector("#txtUsername")
+let txtPassword = document.querySelector("txtPassword")
+let txtConfirmPassword = document.querySelector("txtConfirmPassword")
 let btnRegister = document.querySelector("#btnRegister")
 
 btnRegister.onclick = function () {
-    register(txtUsername.value)
+    register(txtUsername.value, txtPassword, txtConfirmPassword)
 }
+ 
+function register (username, password, confirmpassword) {
 
-function register (username) {
-    console.log(username)
+    console.log(username, password, confirmpassword)
+
+    if(password == confirmpassword && password !="" && confirmpassword !="") {
+        return console.log("Password match!")
+    } else if (password == "" || confirmpassword == ""){
+        return console.log("Password must not be emply.")
+    } else {
+     return console.log("Password does not match.")
+    }
 }
